@@ -1,0 +1,47 @@
+==
+<!-- /.parallax full screen background image -->
+<div class="fullscreen landing parallax" style="background-image:url({{ 'assets/images/bg.jpg' | theme }});" data-img-width="2000" data-img-height="1333" data-diff="100">
+
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+
+                    <!-- /.logo -->
+                    <div class="logo wow fadeInDown"> <a href=""><img src={{ "assets/images/logo.png" | theme }} alt="logo"></a></div>
+
+                    <!-- /.main title -->
+                    <h1 class="wow fadeInLeft">
+                        LA SUERTE TE PUEDE CAER DEL CIELO!
+                    </h1>
+
+                    <!-- /.header paragraph -->
+                    <div class="landing-text wow fadeInUp">
+                        <p>Ayudame a cumplir mi sueño y podes ganar un montón de premios!.<br/>
+                        <strong>Sitio no oficial.</strong></p>
+                    </div>
+
+                    <!-- /.header button -->
+                    <div class="head-btn wow fadeInLeft">
+                        <a href="#premios" class="btn-primary">Premios</a>
+                        <a href="#beneficios" class="btn-default">Beneficios</a>
+                    </div>
+
+                </div>
+
+                <!-- /.signup form -->
+                <div class="col-md-5">
+
+                    <div class="signup-header wow fadeInUp">
+                        <h3 class="form-title text-center">DEJAME TUS DATOS!</h3>
+                        
+                        {% component 'genericForm' %}
+                        
+                       
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

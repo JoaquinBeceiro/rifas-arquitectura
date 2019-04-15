@@ -1,0 +1,16 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    number:
+        label: Número
+    sold:
+        label: Vendido
+        type: checkbox
+    nombre:
+        label: Nombre
+    email:
+        label: Email
+    telefono:
+        label: Telefono

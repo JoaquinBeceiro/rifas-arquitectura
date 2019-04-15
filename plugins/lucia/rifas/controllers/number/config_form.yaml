@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Number
+
+# Model Form Field configuration
+form: $/lucia/rifas/models/number/fields.yaml
+
+# Model Class name
+modelClass: Lucia\Rifas\Models\Number
+
+# Default redirect location
+defaultRedirect: lucia/rifas/number
+
+# Create page
+create:
+    title: Create Number
+    redirect: lucia/rifas/number/update/:number
+    redirectClose: lucia/rifas/number
+
+# Update page
+update:
+    title: Edit Number
+    redirect: lucia/rifas/number
+    redirectClose: lucia/rifas/number
+
+# Preview page
+preview:
+    title: Preview Number

@@ -1,0 +1,194 @@
+title = "home"
+url = "/"
+layout = "default"
+description = "Just another about page"
+is_hidden = 0
+
+[genericForm]
+messages_success = "Enviado con éxito!"
+messages_errors = "Hubo un error, intente nuevamente."
+mail_enabled = 1
+mail_subject = "Nuevo lead - Rifas"
+mail_recipients[] = "joaquinbeceiro@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_enabled = 1
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+==
+<?php
+
+use Lucia\Rifas\Models\Number;
+
+function onStart()
+{
+    $green = $numbers = Number::where("sold", false)->get();
+    $red = $numbers = Number::where("sold",1)->get();
+
+
+    $this['red'] = $red;
+    $this['green'] = $green;
+
+    
+}
+?>
+==
+<!-- /.feature section -->
+<div id="premios">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 text-center feature-title">
+
+                <!-- /.feature title -->
+                <h2>Premios</h2>
+                <p>Más de <strong>2.2 millones de dólares</strong> en premios</p>
+            </div>
+        </div>
+        <div class="row row-feat">
+            <div class="col-md-4 text-center">
+
+                <!-- /.feature image -->
+                <div class="feature-img">
+                    <img src={{ "assets/images/premios.jpg" | theme}} alt="image" class="img-responsive wow fadeInLeft">
+                </div>
+            </div>
+
+            <div class="col-md-8">
+
+                <!-- /.feature 1 -->
+                <div class="col-sm-6 feat-list">
+                    <i class="pe-7s-home pe-5x pe-va wow fadeInUp"></i>
+                    <div class="inner">
+                        <h4>2 casas, 8 apartamentos</h4>
+                        <p>Casas con vista al mar y apartamentos a estrenar</p>
+                    </div>
+                </div>
+
+                <!-- /.feature 2 -->
+                <div class="col-sm-6 feat-list">
+                    <i class="pe-7s-car pe-5x pe-va wow fadeInUp" data-wow-delay="0.2s"></i>
+                    <div class="inner">
+                        <h4>10 autos 0km</h4>
+                        <p>Hyundai modelo HB, i20, Ionic Hybrid y Tucson</p>
+                    </div>
+                </div>
+
+                <!-- /.feature 3 -->
+                <div class="col-sm-6 feat-list">
+                    <i class="pe-7s-plane pe-5x pe-va wow fadeInUp" data-wow-delay="0.4s"></i>
+                    <div class="inner">
+                        <h4>30 viajes por el mundo</h4>
+                        <p>En base doble por Barcelona, Roma, Venecia y más!</p>
+                    </div>
+                </div>
+
+                <!-- /.feature 4 -->
+                <div class="col-sm-6 feat-list">
+                    <i class="pe-7s-phone pe-5x pe-va wow fadeInUp" data-wow-delay="0.6s"></i>
+                    <div class="inner">
+                        <h4>10 Iphone X</h4>
+                        <p>El último modelo de Apple!</p>
+                    </div>
+                </div>
+
+                <!-- /.feature 5 -->
+                <div class="col-sm-6 feat-list">
+                    <i class="pe-7s-monitor pe-5x pe-va wow fadeInUp" data-wow-delay="0.6s"></i>
+                    <div class="inner">
+                        <h4>10 combos MAC</h4>
+                        <p>Macbook Air y iPad Pro 256 GB</p>
+                    </div>
+                </div>
+
+                <!-- /.feature 6 -->
+                <div class="col-sm-6 feat-list">
+                    <i class="pe-7s-plug pe-5x pe-va wow fadeInUp" data-wow-delay="0.6s"></i>
+                    <div class="inner">
+                        <h4>10 set de línea blanca</h4>
+                        <p>Refrigerador, lavavajilla, lavasecarropas y cocina</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 feat-list more-feature">
+                Y muchos premios mas!
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /.pricing section -->
+<div id="numbers">
+    <div class="container">
+        <div class="text-center">
+
+            <!-- /.pricing title -->
+            <h2 class="wow fadeInLeft">NÚMEROS DISPONIBLES</h2>
+            <div class="title-line wow fadeInRight"></div>
+        </div>
+        <div class="row">
+            <ul class="numbers">
+            {% for number in green %}
+                <li class="green">{{ number.number }}</li>
+            {% endfor %}
+            {% for number in red %}
+                <li class="red">{{ number.number }}</li>
+            {% endfor %}
+            </ul>
+        </div>  
+    </div>
+</div>
+
+<!-- /.download section -->
+<div id="download">
+    <div class="action fullscreen parallax" style="background-image:url({{ 'assets/images/bg.jpg' | theme }} );" data-img-width="2000" data-img-height="1333" data-diff="100">
+        <div class="overlay">
+            <div class="container">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 text-center">
+
+                    <!-- /.download title -->
+                    <h2 class="wow fadeInRight">Más información?</h2>
+                    <p class="download-text wow fadeInLeft">Visita la página oficial de arquitectura rifa!</p>
+
+                    <!-- /.download button -->
+                    <div class="download-cta wow fadeInLeft">
+                        <a href="https://www.arquitecturarifa.com.uy/" class="btn-primary" target="_blank">Página Oficial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- /.feature 2 section -->
+<div id="beneficios">
+    <div class="container">
+        <div class="row">
+
+            <!-- /.feature content -->
+            <div class="text-center">
+                <h2>BENEFICIOS</h2>
+                <p>Solo por comprarla ya tenés premios!</p>
+            </div>
+            
+            <div class="col-md-12">
+                
+
+                <div class="row ben-list">
+                    {% partial 'beneficios' %}
+                </div>
+
+            </div>
+
+            
+        </div>
+
+    </div>
+</div>
